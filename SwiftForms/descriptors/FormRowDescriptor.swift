@@ -14,6 +14,7 @@ public final class FormRowDescriptor {
     
     public enum RowType {
         case unknown
+        case address
         case label
         case text
         case url
