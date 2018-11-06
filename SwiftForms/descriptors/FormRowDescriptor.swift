@@ -40,6 +40,7 @@ public final class FormRowDescriptor {
         case slider
         case multipleSelector
         case multilineText
+        case html
     }
     
     public struct CellConfiguration {
