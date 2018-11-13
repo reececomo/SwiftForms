@@ -12,35 +12,50 @@ public final class FormRowDescriptor {
     
     // MARK: Types
     
-    public enum RowType {
+    public enum RowType: String {
+        
         case unknown
         case address
         case label
         case text
         case url
         case number
-        case numbersAndPunctuation
+        case numbersAndPunctuation = "numbers_and_punctuation"
         case decimal
         case name
         case phone
-        case namePhone
+        case namePhone = "name_phone"
         case email
         case twitter
-        case asciiCapable
+        case asciiCapable = "ascii_capable"
         case password
         case button
-        case booleanSwitch
-        case booleanCheck
-        case segmentedControl
+        case booleanSwitch = "boolean_switch"
+        case booleanCheck = "boolean_check"
+        case segmentedControl = "segmented_control"
         case picker
         case date
         case time
-        case dateAndTime
+        case dateAndTime = "datetime"
         case stepper
         case slider
-        case multipleSelector
-        case multilineText
+        case multipleSelector = "multiple_selector"
+        case multilineText = "multiline_text"
         case html
+        
+        /// Should include form value
+        var shouldIncludeFormValue: Bool {
+            switch self {
+            case .unknown,
+                 .label,
+                 .button,
+                 .html:
+                return false
+            default:
+                return true
+            }
+        }
+        
     }
     
     public struct CellConfiguration {

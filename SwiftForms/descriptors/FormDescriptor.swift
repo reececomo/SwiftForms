@@ -33,7 +33,7 @@ public final class FormDescriptor {
         
         for section in sections {
             for row in section.rows {
-                if row.type != .button {
+                if row.type.shouldIncludeFormValue {
                     if let value = row.value {
                         formValues[row.tag] = value
                     } else {
