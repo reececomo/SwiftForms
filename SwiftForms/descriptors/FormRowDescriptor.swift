@@ -156,6 +156,10 @@ public final class FormRowDescriptor {
         }
     }
     
+    public var shouldIncludeFormValue: Bool {
+        return type.shouldIncludeFormValue
+    }
+    
     public var configuration: RowConfiguration
     
     // MARK: Init
