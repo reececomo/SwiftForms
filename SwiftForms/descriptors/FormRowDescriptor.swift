@@ -42,6 +42,7 @@ public final class FormRowDescriptor {
         case multipleSelector = "multiple_selector"
         case multilineText = "multiline_text"
         case html
+        case badge
         
         /// Should include form value
         var shouldIncludeFormValue: Bool {
