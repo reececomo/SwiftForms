@@ -44,17 +44,23 @@ public final class FormRowDescriptor {
         case html
         case badge
         
-        /// Should include form value
-        var shouldIncludeFormValue: Bool {
+        /// Display value only
+        public var displayValueOnly: Bool {
             switch self {
             case .unknown,
                  .label,
                  .button,
-                 .html:
-                return false
-            default:
+                 .html,
+                 .badge:
                 return true
+            default:
+                return false
             }
+        }
+        
+        /// Should include form value
+        public var shouldIncludeFormValue: Bool {
+            return !displayValueOnly
         }
         
     }
@@ -155,6 +161,10 @@ public final class FormRowDescriptor {
             guard let didUpdateBlock = configuration.cell.didUpdateClosure else { return }
             didUpdateBlock(self)
         }
+    }
+    
+    public var displayValueOnly: Bool {
+        return type.displayValueOnly
     }
     
     public var shouldIncludeFormValue: Bool {
