@@ -43,6 +43,7 @@ public final class FormRowDescriptor {
         case multilineText = "multiline_text"
         case html
         case badge
+        case promoCode = "promo_code"
         
         /// Display value only
         public var displayValueOnly: Bool {
